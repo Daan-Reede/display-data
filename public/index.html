@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+    <pre id="result"></pre >
+    
+    <script>
+        async function fetchItems() {
+            try {
+                const response = await fetch('/api/getItems');
+                const data = await response.json();
+                const formattedJSON = JSON.stringify(data, null, 2);
+                // Display the response in the result div
+                document.getElementById('result').innerHTML = formattedJSON;
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        }
+
+        window.addEventListener('load', function () {
+            fetchItems();
+        })
+    </script>
+</body>
+
+</html>

@@ -25,7 +25,7 @@ class DataDAO {
 
       async getAllItems() {
         const querySpec = {
-            query: 'SELECT TOP 2 * FROM c',
+            query: 'SELECT TOP 50 * FROM c',
             parameters: [],
         };
           

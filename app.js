@@ -10,11 +10,6 @@ const key = process.env.KEY;
 const databaseId = process.env.DATABASE_ID;
 const containerId = process.env.CONTAINER_ID;
 
-// const endpoint="https://sogetidb.documents.azure.com/"
-// const key="EkKLekooMyLpYDIbMQb6auNsJIbJZ8VRKfTOOAPs9Q7tkrHOgIiXzOdLlKexXAifoCs6tsxxS8kSACDbjp99Dg=="
-// const databaseId="SogetiDB"
-// const containerId="SogetiTest1"
-
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 

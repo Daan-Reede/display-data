@@ -7,4 +7,4 @@ app.use('/data', dataRoute)
 app.use(express.static(__dirname + '/public'));
 app.use('/scripts',express.static(path.join(__dirname, 'public/scripts')));
 
-app.listen(8080)
+app.listen(8080, () => console.log("Server successfully running on port 8080"))

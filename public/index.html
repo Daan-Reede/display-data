@@ -1,55 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <h1>Dashboard</h1>
-    <pre id="result"></pre>
-    <table id="table">
-        <tr id="tableHeader">
-            <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </table>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <title>Document</title>
+</head>
 
-    <script>
-      async function fetchItems() {
-        try {
-          const response = await fetch("/api/getItems", {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              // Add any additional headers if needed
-            },
-          });
+<body>
+  <h1>Dashboard</h1>
+  <pre id="result"></pre>
+  <table id="table">
+    <tr id="tableHeader">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </table>
 
-          const data = await response.json();
-          var tableBody = document.querySelector("#table");
-          // Function to populate table with JSON data
-          for (var i = 4; i < data.length; i++) {
-            var row = tableBody.insertRow(i - 3);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
+  <script src="scripts/fillTable.js"></script>
+</body>
 
-            cell1.textContent = data[i].id;
-            cell2.textContent = data[i].location;
-            cell3.textContent = data[i].coordinates;
-          }
-        } catch (error) {
-          console.error("Error fetching items:", error);
-        }
-      }
-
-      window.addEventListener("load", function () {
-        fetchItems();
-      });
-    </script>
-  </body>
 </html>

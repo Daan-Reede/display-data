@@ -2,7 +2,7 @@ const { CosmosClient } = require('@azure/cosmos');
 const express = require('express')
 const path = require('path')
 const DataDAO = require('./dataDAO');
-require('dotenv').config()
+require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 const endpoint = process.env.END_POINT;
